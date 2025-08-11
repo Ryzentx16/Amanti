@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./amanti-backend
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./amanti-backend:/app
+    restart: always
+
+  frontend:
+    build:
+      context: ./amanti-web-demo
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./amanti-web-demo:/app
+    restart: always
+

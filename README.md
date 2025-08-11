@@ -280,3 +280,34 @@ For questions or issues with this MVP, please refer to the code comments and doc
 
 **Built with ❤️ using React Native, Expo, Node.js, and GraphQL**
 
+## 🐳 Docker Setup
+
+To run the Amanti backend and web demo using Docker, follow these steps:
+
+1.  **Ensure Docker is installed** on your system.
+
+2.  **Navigate to the `amanti-app` directory** (the root of the cloned repository):
+    ```bash
+    cd amanti-app
+    ```
+
+3.  **Build and start the Docker containers**:
+    ```bash
+    docker compose up --build -d
+    ```
+    This command will:
+    *   Build the `amanti-backend` Docker image.
+    *   Build the `amanti-web-demo` Docker image.
+    *   Start both containers in detached mode (`-d`).
+
+4.  **Access the applications**:
+    *   **Backend GraphQL API**: `http://localhost:4000/graphql`
+    *   **Web Demo**: `http://localhost:80`
+
+5.  **Stop the containers** when you are done:
+    ```bash
+    docker compose down
+    ```
+
+**Note**: The `amanti-mobile` (React Native/Expo) project is not containerized in this setup as it's typically developed and run using Expo CLI on a local machine or emulator. However, the backend is accessible to it once running.
+
